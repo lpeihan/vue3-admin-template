@@ -1,0 +1,78 @@
+{
+  "name": "alfred",
+  "version": "1.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.1.0",
+  "scripts": {
+    "serve": "cross-env MODE=local vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "commit": "git-cz",
+    "prepare": "husky install",
+    "deploy-dev": "cross-env MODE=dev npm run build",
+    "deploy-prod": "cross-env MODE=prod npm run build",
+    "release": "standard-version",
+    "preinstall": "npx only-allow pnpm",
+    "analyze": "npm_config_report=true npm run build",
+    "tinify": "node scripts/tinify",
+    "tinify-compress": "node scripts/tinify compress"
+  },
+  "dependencies": {
+    "async-validator": "^4.2.5",
+    "axios": "^1.7.2",
+    "core-js": "^3.37.1",
+    "dayjs": "^1.11.11",
+    "lodash": "^4.17.21",
+    "mitt": "^3.0.1",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.1.7",
+    "vant": "^4.9.0",
+    "vue": "^3.4.27",
+    "vue-clipboard3": "^2.0.0",
+    "vue-i18n": "9",
+    "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^17.8.1",
+    "@vant/auto-import-resolver": "^1.2.1",
+    "@vue/cli-plugin-babel": "~4.5.19",
+    "@vue/cli-plugin-eslint": "~4.5.19",
+    "@vue/cli-plugin-router": "~4.5.19",
+    "@vue/cli-service": "~4.5.19",
+    "@vue/compiler-sfc": "^3.4.27",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "chalk": "2.4.2",
+    "cli-table3": "^0.6.5",
+    "commitizen": "^4.3.0",
+    "commitlint": "^17.8.1",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-vue": "9.2.0",
+    "husky": "^8.0.3",
+    "less": "^3.13.1",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^14.0.1",
+    "mockjs": "^1.1.0",
+    "ora": "^3.4.0",
+    "prettier": "^2.8.8",
+    "standard-version": "^9.5.0",
+    "style-resources-loader": "^1.5.0",
+    "tinify": "^1.7.1",
+    "vue-cli-plugin-style-resources-loader": "~0.1.5",
+    "webpack-bundle-analyzer": "^4.10.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint"
+    ]
+  }
+}
