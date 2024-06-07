@@ -4,17 +4,17 @@
 
     <div>
       {{ $t('hello') }}
-      <van-button type="primary" @click="handleChangeLocale">
+      <a-button type="primary" @click="handleChangeLocale">
         Change Locale
-      </van-button>
+      </a-button>
     </div>
 
     <div class="color-section">
       <div class="color">Color</div>
 
-      <van-button type="primary" @click="handleChangeColor">
+      <a-button type="primary" @click="handleChangeColor">
         Change Color
-      </van-button>
+      </a-button>
     </div>
     <bottom-bar />
   </div>
