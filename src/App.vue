@@ -1,6 +1,6 @@
 <template>
   <div class="app-root">
-    <router-view v-slot="{ Component }" class="app-view" :key="state.key">
+    <router-view v-slot="{ Component }" :key="state.key">
       <component :is="Component" :key="$route.name" />
     </router-view>
   </div>

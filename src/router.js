@@ -15,7 +15,8 @@ const routes = [
       index: 0,
       auth: false,
     },
-    component: require('@/views/home/Home.vue').default,
+    component: () =>
+      import(/* webpackChunkName: "layout" */ './layouts/BasicLayout.vue'),
   },
 ];
 

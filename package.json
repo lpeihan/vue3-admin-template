@@ -33,6 +33,7 @@
     "vue-router": "^4.3.2"
   },
   "devDependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
     "@commitlint/config-conventional": "^17.8.1",
     "@vant/auto-import-resolver": "^1.2.1",
     "@vue/cli-plugin-babel": "~4.5.19",

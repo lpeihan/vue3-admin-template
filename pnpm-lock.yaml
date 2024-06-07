@@ -48,6 +48,9 @@ importers:
         specifier: ^4.3.2
         version: 4.3.2(vue@3.4.27(typescript@5.4.5))
     devDependencies:
+      '@ant-design/icons-vue':
+        specifier: ^7.0.1
+        version: 7.0.1(vue@3.4.27(typescript@5.4.5))
       '@commitlint/config-conventional':
         specifier: ^17.8.1
         version: 17.8.1
