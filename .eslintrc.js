@@ -35,7 +35,7 @@ module.exports = {
       'error',
       'kebab-case',
       {
-        registeredComponentsOnly: false,
+        registeredComponentsOnly: true,
         ignores: [],
       },
     ],

@@ -1,18 +1,16 @@
-import { TOKEN_NAME } from './constants';
-import storage from './storage';
+const currentAuth = ['admin'];
+export { currentAuth };
 
-export function setToken(token) {
-  storage.setItem(TOKEN_NAME, token);
+export function getCurrentAuthority() {
+  return currentAuth;
 }
 
-export function getToken() {
-  return storage.getItem(TOKEN_NAME);
+export function check(authority = []) {
+  const current = getCurrentAuthority();
+  return current.some((item) => authority.includes(item)) || true;
 }
 
 export function isLogin() {
-  return getToken();
-}
-
-export function clearToken() {
-  storage.removeItem(TOKEN_NAME);
+  const current = getCurrentAuthority();
+  return current && current[0] !== 'guest';
 }

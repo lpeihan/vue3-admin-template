@@ -1,4 +1,5 @@
 import NProgress from 'nprogress';
+import { h } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 import { isLogin } from '@/utils/auth';
@@ -17,6 +18,29 @@ const routes = [
     },
     component: () =>
       import(/* webpackChunkName: "layout" */ './layouts/BasicLayout.vue'),
+    children: [
+      {
+        path: '/',
+        redirect: '/dashboard/index',
+      },
+      {
+        path: '/dashboard',
+        name: 'dashboard',
+        meta: { icon: 'dashboard', title: '仪表盘' },
+        component: { render: () => h('router-view') },
+        children: [
+          {
+            path: '/dashboard/index',
+            name: 'dashboard',
+            meta: { title: '仪表盘' },
+            component: () =>
+              import(
+                /* webpackChunkName: "dashboard" */ './views/dashboard/Dashboard'
+              ),
+          },
+        ],
+      },
+    ],
   },
 ];
 
